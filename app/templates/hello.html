@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Hello ! World{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h1>Create Camping Trip</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{form.tripname.label}}<br>
+            {{form.tripname()}}
+        </p>
+        <p>
+            {{form.startdate.label}}<br>
+            {{form.startdate()}}
+        </p>
+        <p>
+            {{form.startdate.label}}<br>
+            {{form.startdate()}}
+        </p>
+        <p>
+            {{form.campgroundname.label}}<br>
+            {{form.campgroundname()}}
+        </p>
+        <p>{{form.submit()}}</p>
+    </form>
+{% endblock %}
