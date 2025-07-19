@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Add a new camping trip{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h1>Create Camping Trip</h1>
+    {% with messages = get_flashed_messages () %}
+    {% if messages %}
+    <p>
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+    </p>
+    {% endif %}
+    {% endwith %}
+    <p>This form allows you to create a new camping trip. Fill in fields below and submit to see the camping trip appear on your list. 
+        See the Help page for more detailed instructions.</p>
+    </br>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{form.tripname.label}}<br>
+            {{form.tripname()}}
+        </p>
+        <p>
+            {{form.startdate.label}}<br>
+            {{form.startdate()}}
+        </p>
+        <p>
+            {{form.enddate.label}}<br>
+            {{form.enddate()}}
+        </p>
+        <p>
+            {{form.campground.label}}<br>
+            {{form.campground()}}
+        </p>
+        <p>
+            <button class="btn-add">
+                {{form.submit(value="Create Trip", class="btn-add-borderless")}}
+            </button>
+        </p>
+    </form>
+{% endblock %}

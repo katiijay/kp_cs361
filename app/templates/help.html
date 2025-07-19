@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Help Page{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+    <h1>Help and Instructions</h1>
+    <h2>How to use our site</h2>
+    <h3>General Use</h3>
+    <p>
+        This site is intended to be a repository of all of your upcoming camping trips. You can view, create, update or remove trips all on this application. 
+    </p>
+    <h3>View Trips</h3>
+    <ul>
+        <li>Clicking on any of the Trip Names will allow you to see the details of a camping trip. </li>
+        <li>Adding a new trip will allow you to add a new trip to your list (see Add/Update a trip below)</li>
+        <li>Updating a trip will let you change the details of a trip you've already created (see Add/Update a trip below)</li>
+        <li>Deleting a trip will remove it from your list. Please note, this is a permanent action! 
+        If you want to instead change the trip, please use the "Update" option instead. </li>
+    </ul>
+    <h3>Add/Update a Trip</h3>
+    <p>
+        Adding and updating a trip are extremely similar. The only difference is that "adding" will create a new trip on your list, and "updating" will 
+        alter an existing trip that you've already created. The information in the form is as follows.: 
+    </p>
+    <ul>
+        <li>Trip Name: This is a required field that should contain a custom name you can give the trip so you can quickly identify it. 
+            While it's not required, it is helpful to make this name unique so you can distinguish it from other trips.</li>
+        <li>Trip Start Date: This is a required field. It is the date you wish to start your trip.</li>
+        <li>Trip End Date: This is the date you wish to end your trip.</li>
+        <li>Campground Name: This is a required field. This drop-down field allows you to select from a list of known National Parks Campgrounds.</li>
+        <li>Submit Button: This button confirms your changes and will direct you to view the trip once complete. 
+            If you made a mistake, you can choose to "Update" from that page!</li>
+    </ul>
+    <h2>About the National Parks</h2>
+    <p>
+        <p>
+            There are officially 63 National Parks in the United States, and an additional 370 designated Parks in the Parks System. 
+            To find out more, visit the <a href="https://www.nps.gov/index.htm">US National Parks website</a>. 
+        </p>
+    </p>
+    <h2>Contact us</h2>
+    <p>
+        If your questions were not answered here, please reach out to us at emailaddress@domainname.edu
+    </p>
+{% endblock %}

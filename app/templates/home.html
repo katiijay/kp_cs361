@@ -1,5 +1,68 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Welcome to the homepage!{% endblock %}</h1>
+  <h1>{% block title %}Camping Trip Tracker{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+<h1>Welcome to the camping trip tracker</h1>
+<p>
+  This page includes all of your past and upcoming camping trips. 
+  <ul>
+    <li>To add a new trip, you can use the add a trip button below. </li>
+    <li>To view more details about a trip, click the trip name. </li>
+    <li>All trips can be viewed in detail, updated, and deleted as well. </li>
+  </ul>
+  </br>
+  Happy Camping!
+</p>
+</br>
+</br>
+  <button class="btn-add">
+    <a href="{{ url_for('addnewpage') }}">Add a New Trip</a>
+  </button>
+</br>
+</br>
+</br>
+</br>
+ <table>
+  <tr>
+    <th>Trip Name</th>
+    <th>Trip Start Date</th>
+    <th>Trip End Date</th>
+    <th>Campground</th>
+    <th>Park</th>
+    <th> </th>
+  </tr>
+  {% for trip in trips %}
+  <tr>
+    <td>
+      <a href="{{url_for('trip', tripnumber=trip['_id'])}}">{{trip["tripname"]}}</a>
+    </td>
+    <td>
+    {{trip["startdate"]}}
+    </td>
+    <td>
+    {{trip["enddate"]}}
+    </td>
+    <td>
+      {{trip["campgroundname"]}}
+    </td>
+    <td>
+      {{trip["parkname"]}}
+    </td>
+    <td>
+      <button class="btn-update">
+        <a href="{{ url_for('updatetrippage', tripnumber=trip['_id']) }}">Update</a>
+      </button>
+      <button class="btn-delete">
+        <a href="{{ url_for('deletetrippage', tripnumber=trip['_id']) }}" onclick="return confirm('Deleting a trip cannot be reversed, are you sure?')">Delete</a>
+      </button>
+    </td>
+  </tr>
+  {% endfor %}
+</table> 
+</br>
+</br>
 {% endblock %}
