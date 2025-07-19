@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+  <h1>{% block title %}Trip Page{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+        </br>
+        </br>
+        </br>
+<table class="noborder">
+  <tr>
+    <th><p><h3>{{trip["tripname"]}}</h3></p></th>
+    <th>
+      <p align="center">
+        {{trip["startdate"]}} 
+        through 
+        {{trip["enddate"]}}
+      </p>
+    </th>
+    <th >
+      <p align="right">
+      <button class="btn-update">
+        <a href="{{ url_for('updatetrippage', tripnumber=trip['_id']) }}">Update</a>
+      </button>
+      <button class="btn-delete">
+        <a href="{{ url_for('deletetrippage', tripnumber=trip['_id'])}}" onclick="return confirm('Deleting a trip cannot be reversed, are you sure?')">Delete</a>
+      </button>
+      </p>
+    </th>
+  </tr>
+</table>
+    <section>
+        </br>
+        </br>
+        </br>
+    </section>
+    <section>
+        <p>
+          {{campground["name"]}}
+            </br>
+          {{campground["parkname"]}} National Park
+            </br>
+          {{campground["park_line1"]}}
+            </br>
+          {{campground["park_city"]}}, {{campground["park_statecode"]}}, {{campground["park_postalcode"]}}, {{campground["park_countrycode"]}}
+            </br>
+          
+            </br>
+          
+        </p>
+    </section>
+{% endblock %}

@@ -1,38 +1,34 @@
-/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
-/*  ===== See tablet, desktop, and print @media queries at the bottom. */
-
-
+/*   ----- Formatting pulled from the CS290 CSS template-----  */
 /*   ----- Imports  -----  */
-  /* @import 'node_modules/modern-normalize/modern-normalize.css';  npm install modern-normalize  Resets elements for browser consistency.  https://www.npmjs.com/package/modern-normalize */         
-  /* @import "component1.css";   Component-specific stylesheets, if any.   */
-  /* @import url(//fonts.googleapis.com/css?family=Font+Name); Add fonts from a hosted services like Google Fonts.   */
   @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap');
   
-
-  
-
 /*   ----- Variables  -----  */
 :root {
     /*--custom-color-name:;*/
-    --GreyWhite: #ACB6BE; 
-    --OliveGreen: #5F6A4C; 
-    --NavyBlue: #0A2033; 
-    --Periwinkle: #364761CC; 
-    --PlatinumWhite: #D1D7DB; 
-    --BlueBlack: #01101E;     
+    --AddGreen: #c7ebb3; 
+    --AddGreenBorder: #455c39; 
+    --UpdateBlue: #576b96; 
+    --UpdateBlueBorder: #262e3f; 
+    --DeleteRed: #97695b;
+    --DeleteRedBorder: #571805;
+    --MidGreen: #0b4120; 
+    --Sand: #c7ba90cc; 
+    --LightSand: #fcf1d0cc; 
+    --PlatinumWhite: #e0e0e0; 
+    --DarkGreen: #011e0b;     
     /*--custom-embellishment-name:;*/
   }
   
   /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
   body {       /* Can alternatively define in html {}. */
     /* background-image: url(images/mountains-background.jpg);*/
+    background-color: var(--LightSand);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    color:var(--NavyBlue);
-    /* Define with at least one font name and its related generic family name.*/
+    color:var(--DarkGreen);
     font-family: "Red Hat Display", sans-serif; 
     margin: 0% 10%;
     padding: 5%;
@@ -43,7 +39,7 @@
   /*  ----- Page layout blocks -----  */
   header {
     padding: 10px;
-    background-color: var(--BlueBlack); 
+    background-color: var(--DarkGreen); 
     border-radius: 10px 10px 0px 0px;
     color: var(--PlatinumWhite);
     text-align: center;
@@ -55,82 +51,67 @@
     }
   main {
     padding: 5%;
-    background-color: var(--PlatinumWhite);
-    color: var(--BlueBlack);
+    background-color: var(--Sand);
+    color: var(--DarkGreen);
     border-width: 2px;
     border-style: solid;
     border-bottom: 0px;
     border-top: 0px;
-    border-color: var(--Periwinkle);
+    border-color: var(--Sand);
     }
+/*
   section {}
   article {}
     #topic1 {}
     #topic2 {}
   div {}
   aside {}
+*/
   footer {
     padding: 5%;
-    background-color: var(--Periwinkle);
-    color: var(--BlueBlack);
+    background-color: var(--Sand);
+    color: var(--DarkGreen);
     border-radius: 0px 0px 10px 10px;
     }
-  
-  /* ----- Anchors ----- Text links */
-  a {}
-  a:link {}
-  a:hover {}
-  a:active {}
-  a:visited {}
-  
+    
   /*  ----- Navigation ----- Override text links for navigation only.  */
   nav {
     padding: 5px;
     margin: 0;
     text-align: center;
     font-family: "REM", sans-serif;
-    background-color: var(--Periwinkle);
+    background-color: var(--Sand);
+    color: var(--LightSand);
     position:sticky; top:0;
     }
-    .local {
-        border-radius: 5px;
-        padding: 12px;
-        background-color: var(--BlueBlack);
-        }
     .local a {  
         font-size: 16px;
         background-color: var(--OliveGreen);
-        color: var(--BlueBlack);
+        color: var(--DarkGreen);
         border-radius: 5px;
         margin: 3px;
         padding: 2px;
-        text-decoration: none;
         position:sticky;
         line-height:26px;
         }
-    .local a:hover {}
   nav a {
     font-size: 18px;
-    background-color: var(--NavyBlue);
-    color: var(--PlatinumWhite);
+    background-color: var(--MidGreen);
+    color: var(--LightSand);
+    text-emphasis-color: var(--LightSand);
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
     margin: 5px;
-    padding: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
     text-decoration: none;
     line-height:28px;
     }
-  nav a:hover {}
   
   /*  -----  Typography  ----- */
-  p {}
-  br {}
-  ol, ul, dl {}
-  li {}
-  dt {}
-  dd {}
-  
   h1, h2, h3, h4, h5, h6 {font-family: "REM", sans-serif;} 
   h1 {
     font-size:45px;
@@ -141,52 +122,124 @@
   h3 {
     font-size:20px;
     }
-  h4 {}
-  h5 {}
-  h6 {}
-  
-  abbr {}
-  acronym {}
-  address {}
-  blockquote {}
-    q {}
-    cite {}
-  em {}
-  hr {}
-  mark {}
-  s {}
-  span {}
-  strong {}
-  sub {}
-  sup {}
-  time {}
   
   /*  ----- Coding or instructional typography ----- */
-  pre {}
-  code {}
-  kbd {}
-  samp {}
-  var {}
-  del {} 
-  ins {}
   
   /*  ----- Table ----- */
-  table {}
-  caption {}
-  thead {}
-  tbody {}
-  tfoot {}
-  tr {}
-    tr:nth-child(even) {}
-  th {}
-  td {}
-    td:nth-child(1) {}
-  colgroup {}
-  data {}
-  datalist {}
+  table {
+    text-align: left;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 5px;
+    border-collapse: collapse;
+    column-gap: 10px;
+    width: 100%;
+  }
   
+  .noborder {
+    border-width: 10px;
+    border-color: var(--LightSand);
+  }
+
+  thead {
+    align-content: baseline;
+  }
+  th {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  td {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+  }
   
+  /*---- Buttons ---- */
+  /* Button styles */
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 10rem;
+}
+
+button, 
+input[type="submit"]
+{
+  text-align: center;
+  font-family: "REM", sans-serif;
+  padding: 0.75rem 1.5rem;
+  /*border-radius: var(--radius);*/
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: None;
+  border-color: None;
+}
+
+.btn-delete {
+  background-color: var(--DeleteRed);
+  border-color: var(--DeleteRedBorder);
+  text-align: center;
+  font-family: "REM", sans-serif;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-add {
+  background-color: var(--AddGreen);
+  border-color: var(--AddGreenBorder);
+  text-align: center;
+  font-family: "REM", sans-serif;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-add-borderless {
+  background-color: var(--AddGreen);
+  border-width: 0px;
+
+}
+
+.btn-update  {
+  background-color: var(--UpdateBlue);
+  border-color: var(--UpdateBlueBorder);
+  text-align: center;
+  font-family: "REM", sans-serif;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-update-borderless {
+  background-color: var(--UpdateBlue);
+  border-width: 0px;
+}
+
+/* Action buttons 
+.action-btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  background-color: None;
+  border-color: None;
+}
+
+  */
   /*  ----- Form ----- */
+   
+  /*
   form {}
   fieldset {}
     legend {}
@@ -200,6 +253,8 @@
   output {}
   meter {}
   progress {}
+    
+  */
   
   
   /* ----- Media ----- */
@@ -212,7 +267,7 @@
         padding: 5px;
         margin: 5px;
         border-style: double;
-        border-color: var(--NavyBlue);
+        border-color: var(--MidGreen);
         border-radius: 10px;
     }
     .gallery figure{
@@ -221,7 +276,7 @@
         align-self: center;
         text-align: center;
         margin: 5;
-        border-color: var(--Periwinkle);
+        border-color: var(--Sand);
         border-radius: 5px;
         border-style:ridge;
         border-width: 1px;
@@ -233,6 +288,7 @@
         padding: 1% 2% 1% 2%;
         text-align: left;
         }
+/*
     figcaption {}
     figure img {}
   svg {}
@@ -243,8 +299,10 @@
   audio {}
   embed {}
   object {}
+  */
   
   /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+  /*
   .gallery {}
   
   .floatright {}
@@ -268,13 +326,4 @@
   .shape {}
   
   @keyframes App-logo {}
-  
-  /*   ===== TABLET  media query overrides mobile styles ===== */
-  @media all and (min-width: 600px) {}
-  
-  /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
-  @media all and (min-width: 1080px) {}
-  
-  /*   ===== PRINT  media query overrides previous styles =====  */
-  @media print {}
-  
+  */

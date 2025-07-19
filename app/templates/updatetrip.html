@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Update your camping trip{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <h1>Update Camping Trip</h1>
+    <p>This form allows you to update an existing camping trip. Update fields below and submit to see the changes on your list. 
+        See the Help page for more detailed instructions.</p>
+    </br>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{form.tripname.label}}<br>
+            {{form.tripname(value=trip["tripname"])}}
+        </p>
+        <p>
+            {{form.startdate.label}}<br>
+            {{form.startdate(value=trip["startdate"])}}
+        </p>
+        <p>
+            {{form.enddate.label}}<br>
+            {{form.enddate(value=trip["enddate"])}}
+        </p>
+        <p>
+            {{form.campground.label}}<br>
+            {{form.campground(value=campground)}}
+        </p>
+            <button class="btn-update">
+                {{form.submit(value="Update Trip", class="btn-update-borderless")}}
+            </button>
+    </form>
+{% endblock %}
