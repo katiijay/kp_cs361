@@ -6,9 +6,6 @@
 {% endblock %}
 
 {% block content %}
-        </br>
-        </br>
-        </br>
 <table class="noborder">
   <tr>
     <th><p><h3>{{trip["tripname"]}}</h3></p></th>
@@ -31,24 +28,74 @@
     </th>
   </tr>
 </table>
+  <section class="alert">
+    <h3>Active Park Alerts</h3>
+    {% for alert in alerts %}
+      <h5>{{alert["title"]}}</h5>
+      {{alert["description"]}}
+    {% endfor %}
+  </section>
+  
+  <section>
+<table class="noborder">
+  <tr>
+    <th>
+        <h3>How to Get There</h3>
+    </th>
+    <th>
+      <h3>Trip Notes</h3>
+    </form>
+      </p>
+    </th>
+    <tr>
+      <td>
+        {{trip["campgroundName"]}}
+          </br>
+        {{trip['parkName']}}
+          </br>
+        {{trip["addressline1"]}}
+          </br>
+        {{trip['addresscity']}}, {{trip['addressstate']}}, {{trip["addresszip"]}}, {{trip["addresscountry"]}}
+      </td>
+      <td>
+        <p>{{ notes['notes'] }}</p>
+        <p>
+        <a href="{{ url_for('tripnotes', tripnumber=trip['_id']) }}" align="right">Add or Update Notes</a>
+        </p>
+      </td>
+    </tr>
+    </table>
+    </section>
+
     <section>
-        </br>
-        </br>
-        </br>
+      <h3>Trip Weather Forecast</h3>
+      <table class="noborder">
+        <tr>
+          {% for date in weather %}
+            <th>
+              <h4 align="center">{{date['date']}} </h4>
+              <h4 align="center">{{date['weatherCodeName']}} </h4>
+              <p>
+              {{date['tempMin']}} {{date['tempScale']}} Min {{date['tempMax']}} {{date['tempScale']}} Max
+              <br> 
+              Rain: {{date['rainMax']}} {{date['rainScale']}} | Snow: {{date['snowMax']}} {{date['rainScale']}}
+              </p>
+            </th>     
+          {% endfor %}
+        </tr>
+      </table>
+
     </section>
     <section>
-        <p>
-          {{campground["name"]}}
-            </br>
-          {{campground["parkname"]}} National Park
-            </br>
-          {{campground["park_line1"]}}
-            </br>
-          {{campground["park_city"]}}, {{campground["park_statecode"]}}, {{campground["park_postalcode"]}}, {{campground["park_countrycode"]}}
-            </br>
-          
-            </br>
-          
-        </p>
+      <h3>Activities at this park</h3>
+      <p>
+        {% for activity in activities %}
+          <h5>{{activity["name"]}}</h5>
+          {{activity["shortDescription"]}}
+          </br>
+          <a href="{{activity['url']}}">{{activity['url']}}</a>
+          </br>
+        {% endfor %}
+      </p>
     </section>
 {% endblock %}

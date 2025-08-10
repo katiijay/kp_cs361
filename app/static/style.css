@@ -59,8 +59,19 @@
     border-top: 0px;
     border-color: var(--Sand);
     }
-/*
-  section {}
+
+  section {padding: 1%;}
+    .alert {
+      border-color: #571805;
+      color:#3b1104;
+      border-style: dashed;
+    }
+    .alert-header {
+      font-size: 16px;
+      font-family: "REM", sans-serif;
+      color:#3b1104;
+    }
+  /*
   article {}
     #topic1 {}
     #topic2 {}
@@ -135,11 +146,6 @@
     column-gap: 10px;
     width: 100%;
   }
-  
-  .noborder {
-    border-width: 10px;
-    border-color: var(--LightSand);
-  }
 
   thead {
     align-content: baseline;
@@ -153,6 +159,12 @@
     border: 1px solid;
     border-radius: 5px;
     padding: 5px;
+  }
+
+  
+  .noborder {
+    border-width: 10px;
+    border-color: var(--LightSand);
   }
   
   /*---- Buttons ---- */
